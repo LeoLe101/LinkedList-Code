@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>TestMyArrayList.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;ArrayListCode_2&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">cs143</a> &gt; <span class="el_source">TestMyArrayList.java</span></div><h1>TestMyArrayList.java</h1><pre class="source lang-java linenums">package cs143;
+
+<span class="nc" id="L3">public class TestMyArrayList {</span>
+
+    public static void main(String[] args) {
+        // Create a list
+<span class="nc" id="L7">        MyList&lt;String&gt; list = new MyArrayList&lt;&gt;();</span>
+
+        // Add elements to the list
+<span class="nc" id="L10">        list.add(&quot;America&quot;); // Add it to the list</span>
+<span class="nc" id="L11">        System.out.println(&quot;(1) &quot; + list);</span>
+
+<span class="nc" id="L13">        list.add(0, &quot;Canada&quot;); // Add it to the beginning of the list</span>
+<span class="nc" id="L14">        System.out.println(&quot;(2) &quot; + list);</span>
+
+<span class="nc" id="L16">        list.add(&quot;Russia&quot;); // Add it to the end of the list</span>
+<span class="nc" id="L17">        System.out.println(&quot;(3) &quot; + list);</span>
+
+<span class="nc" id="L19">        list.add(&quot;France&quot;); // Add it to the end of the list</span>
+<span class="nc" id="L20">        System.out.println(&quot;(4) &quot; + list);</span>
+
+<span class="nc" id="L22">        list.add(2, &quot;Germany&quot;); // Add it to the list at index 2</span>
+<span class="nc" id="L23">        System.out.println(&quot;(5) &quot; + list);</span>
+
+<span class="nc" id="L25">        list.add(5, &quot;Norway&quot;); // Add it to the list at index 5</span>
+<span class="nc" id="L26">        System.out.println(&quot;(6) &quot; + list);</span>
+
+        // Remove elements from the list
+<span class="nc" id="L29">        list.remove(&quot;Canada&quot;); // Same as list.remove(0) in this case</span>
+<span class="nc" id="L30">        System.out.println(&quot;(7) &quot; + list);</span>
+
+<span class="nc" id="L32">        list.remove(2); // Remove the element at index 2</span>
+<span class="nc" id="L33">        System.out.println(&quot;(8) &quot; + list);</span>
+
+<span class="nc" id="L35">        list.remove(list.size() - 1); // Remove the last element</span>
+<span class="nc" id="L36">        System.out.print(&quot;(9) &quot; + list + &quot;\n(10) &quot;);</span>
+
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        for (String s : list) {</span>
+<span class="nc" id="L39">            System.out.print(s.toUpperCase() + &quot; &quot;);</span>
+<span class="nc" id="L40">        }</span>
+<span class="nc" id="L41">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
