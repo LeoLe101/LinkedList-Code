@@ -243,10 +243,16 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
      * Return the index of the last matching element in this list. Return -1 if
      * no match.
      */
-    public int lastIndexOf(E e
-    ) {
-        System.out.println("Implementation left as an exercise");
-        return 0;
+    public int lastIndexOf(E e) {
+        Node current = head;
+        int index = -1;
+        for (int i = 0; i < size; i++) {
+            if (current.element.equals(e)) {
+                index = i;
+            }
+            current = current.next;
+        }
+        return index;
     }
 
     @Override
@@ -254,10 +260,16 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
      * Replace the element at the specified position in this list with the
      * specified element.
      */
-    public E set(int index, E e
-    ) {
-        System.out.println("Implementation left as an exercise");
-        return null;
+    public E set(int index, E e) {
+        if (index < 0 || index >= size) {
+            return null;
+        }
+        Node current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        current.element = e;
+        return e;
     }
 
     @Override
@@ -278,6 +290,8 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
             implements java.util.Iterator<E> {
 
         private Node<E> current = head; // Current index 
+        private Node<E> prev1 = null;
+        private Node<E> prev2 = null;
 
         @Override
         public boolean hasNext() {
@@ -287,13 +301,15 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
         @Override
         public E next() {
             E e = current.element;
+            prev2 = prev1;
+            prev1 = current;
             current = current.next;
             return e;
         }
 
         @Override
         public void remove() {
-            System.out.println("Implementation left as an exercise");
+            prev2.next = current;
         }
     }
 
